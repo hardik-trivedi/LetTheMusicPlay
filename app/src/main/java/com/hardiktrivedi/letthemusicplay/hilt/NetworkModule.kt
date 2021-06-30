@@ -16,7 +16,7 @@ class NetworkModule {
     @Provides
     fun provideAlbumApiService(): AlbumApiService {
         return Retrofit.Builder()
-            .baseUrl("ws.audioscrobbler.com/2.0/")
+            .baseUrl("https://ws.audioscrobbler.com/2.0/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(AlbumApiService::class.java)
