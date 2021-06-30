@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.hardiktrivedi.letthemusicplay.R
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SearchAlbumFragment : Fragment() {
 
     companion object {
