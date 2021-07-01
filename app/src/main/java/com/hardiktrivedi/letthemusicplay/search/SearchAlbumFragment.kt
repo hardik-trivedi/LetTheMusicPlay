@@ -4,11 +4,15 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import android.widget.SearchView
+import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.hardiktrivedi.letthemusicplay.R
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class SearchAlbumFragment : Fragment(R.layout.search_album_fragment) {
@@ -39,14 +43,22 @@ class SearchAlbumFragment : Fragment(R.layout.search_album_fragment) {
         (menuItem.actionView as? SearchView)?.setOnQueryTextListener(object :
             SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(p0: String?): Boolean {
-                return false
+                return true
             }
 
             override fun onQueryTextChange(newSearch: String?): Boolean {
-                viewModel.performSearch(newSearch)
+                performSearch(newSearch)
                 return true
             }
         }
         )
+    }
+
+    private fun performSearch(newSearch: String?) {
+        lifecycleScope.launch {
+            viewModel.performSearch(newSearch).collect {
+
+            }
+        }
     }
 }

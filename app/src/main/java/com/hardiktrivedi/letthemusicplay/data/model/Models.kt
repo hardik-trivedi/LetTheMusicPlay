@@ -14,6 +14,7 @@ data class Results(
     @SerializedName("opensearch:itemsPerPage")
     val itemsPerPage: String,
 
+    @SerializedName("albummatches")
     val albumMatches: AlbumMatches
 )
 
