@@ -55,6 +55,7 @@ dependencies {
     implementation "com.google.dagger:hilt-android:$hilt_version"
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.1'
     implementation 'com.squareup.picasso:picasso:2.8'
+    testImplementation 'io.mockk:mockk:1.10.6'
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
 
     //Retrofit
