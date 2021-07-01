@@ -20,7 +20,16 @@ data class Results(
 
 data class AlbumMatches(val album: List<Album>)
 
-data class Album(val name: String, val artist: String, val url: String, val image: List<Image>)
+data class Album(val name: String, val artist: String, val url: String, val image: List<Image>) {
+    val largeAlbumArtUrl: String
+        get() {
+            return image.filter {
+                it.size == "large"
+            }.map {
+                it.url
+            }.first()
+        }
+}
 
 data class Image(
     @SerializedName("#text")
