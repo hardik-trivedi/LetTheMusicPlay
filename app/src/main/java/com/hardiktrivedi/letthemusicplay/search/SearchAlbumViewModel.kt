@@ -6,6 +6,9 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class SearchAlbumViewModel @Inject constructor (val albumRepository: AlbumRepository) : ViewModel() {
-    // TODO: Implement the ViewModel
+class SearchAlbumViewModel @Inject constructor(private val albumRepository: AlbumRepository) :
+    ViewModel() {
+    fun performSearch(newSearch: String?) {
+
+    }
 }
