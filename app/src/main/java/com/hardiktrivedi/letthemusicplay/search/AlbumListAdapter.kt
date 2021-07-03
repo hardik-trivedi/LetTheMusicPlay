@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.hardiktrivedi.letthemusicplay.R
 import com.hardiktrivedi.letthemusicplay.data.model.Album
 import com.hardiktrivedi.letthemusicplay.databinding.AlbumListItemBinding
+import com.hardiktrivedi.letthemusicplay.util.largeAlbumArtUrl
 import com.squareup.picasso.Picasso
 
 class AlbumListAdapter :
@@ -29,7 +30,7 @@ class AlbumListAdapter :
         fun bind(item: Album) {
             with(binding) {
                 Picasso.get()
-                    .load(item.largeAlbumArtUrl)
+                    .load(item.image.largeAlbumArtUrl)
                     .placeholder(R.drawable.ic_album_placeholder)
                     .into(albumArtImageView)
                 albumArtImageView.contentDescription =
