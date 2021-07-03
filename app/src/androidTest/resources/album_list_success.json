@@ -1,0 +1,209 @@
+{
+  "results": {
+    "opensearch:Query": {
+      "#text": "",
+      "role": "request",
+      "searchTerms": "believe",
+      "startPage": "1"
+    },
+    "opensearch:totalResults": "135408",
+    "opensearch:startIndex": "0",
+    "opensearch:itemsPerPage": "10",
+    "albummatches": {
+      "album": [{
+        "name": "Believe",
+        "artist": "Disturbed",
+        "url": "https://www.last.fm/music/Disturbed/Believe",
+        "image": [{
+          "#text": "https://lastfm.freetls.fastly.net/i/u/34s/dcf5cf4b9da64e979719a102acd222cc.png",
+          "size": "small"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/64s/dcf5cf4b9da64e979719a102acd222cc.png",
+          "size": "medium"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/174s/dcf5cf4b9da64e979719a102acd222cc.png",
+          "size": "large"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/dcf5cf4b9da64e979719a102acd222cc.png",
+          "size": "extralarge"
+        }],
+        "streamable": "0",
+        "mbid": "c559efc2-f734-41ae-93bd-2d78414e0356"
+      }, {
+        "name": "Make Believe",
+        "artist": "Weezer",
+        "url": "https://www.last.fm/music/Weezer/Make+Believe",
+        "image": [{
+          "#text": "https://lastfm.freetls.fastly.net/i/u/34s/1c8439b16ed4ca4e0bac727e7b325581.png",
+          "size": "small"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/64s/1c8439b16ed4ca4e0bac727e7b325581.png",
+          "size": "medium"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/174s/1c8439b16ed4ca4e0bac727e7b325581.png",
+          "size": "large"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/1c8439b16ed4ca4e0bac727e7b325581.png",
+          "size": "extralarge"
+        }],
+        "streamable": "0",
+        "mbid": "9e7103bb-fc9a-4e5a-a90c-2a3ab4c08e19"
+      }, {
+        "name": "Believe (Deluxe Edition)",
+        "artist": "Justin Bieber",
+        "url": "https://www.last.fm/music/Justin+Bieber/Believe+(Deluxe+Edition)",
+        "image": [{
+          "#text": "https://lastfm.freetls.fastly.net/i/u/34s/263880589b66186a82acd18187920c0c.png",
+          "size": "small"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/64s/263880589b66186a82acd18187920c0c.png",
+          "size": "medium"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/174s/263880589b66186a82acd18187920c0c.png",
+          "size": "large"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/263880589b66186a82acd18187920c0c.png",
+          "size": "extralarge"
+        }],
+        "streamable": "0",
+        "mbid": ""
+      }, {
+        "name": "Believe",
+        "artist": "Justin Bieber",
+        "url": "https://www.last.fm/music/Justin+Bieber/Believe",
+        "image": [{
+          "#text": "https://lastfm.freetls.fastly.net/i/u/34s/ca337a40bbb78937bf330454761ee592.png",
+          "size": "small"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/64s/ca337a40bbb78937bf330454761ee592.png",
+          "size": "medium"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/174s/ca337a40bbb78937bf330454761ee592.png",
+          "size": "large"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/ca337a40bbb78937bf330454761ee592.png",
+          "size": "extralarge"
+        }],
+        "streamable": "0",
+        "mbid": "5d88ae0c-c4bf-4e64-bc97-45789880d910"
+      }, {
+        "name": "Believe",
+        "artist": "Cher",
+        "url": "https://www.last.fm/music/Cher/Believe",
+        "image": [{
+          "#text": "https://lastfm.freetls.fastly.net/i/u/34s/3b54885952161aaea4ce2965b2db1638.png",
+          "size": "small"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/64s/3b54885952161aaea4ce2965b2db1638.png",
+          "size": "medium"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/174s/3b54885952161aaea4ce2965b2db1638.png",
+          "size": "large"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/3b54885952161aaea4ce2965b2db1638.png",
+          "size": "extralarge"
+        }],
+        "streamable": "0",
+        "mbid": "63b3a8ca-26f2-4e2b-b867-647a6ec2bebd"
+      }, {
+        "name": "Don't Believe the Truth",
+        "artist": "Oasis",
+        "url": "https://www.last.fm/music/Oasis/Don%27t+Believe+the+Truth",
+        "image": [{
+          "#text": "https://lastfm.freetls.fastly.net/i/u/34s/df7a337e5a38415db87b5a9f8020806c.png",
+          "size": "small"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/64s/df7a337e5a38415db87b5a9f8020806c.png",
+          "size": "medium"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/174s/df7a337e5a38415db87b5a9f8020806c.png",
+          "size": "large"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/df7a337e5a38415db87b5a9f8020806c.png",
+          "size": "extralarge"
+        }],
+        "streamable": "0",
+        "mbid": "af2763e9-ebb9-319b-93e0-02f7449e8a67"
+      }, {
+        "name": "Believers Never Die - Greatest Hits",
+        "artist": "Fall Out Boy",
+        "url": "https://www.last.fm/music/Fall+Out+Boy/Believers+Never+Die+-+Greatest+Hits",
+        "image": [{
+          "#text": "https://lastfm.freetls.fastly.net/i/u/34s/190429befa66419db3510a86774006cb.png",
+          "size": "small"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/64s/190429befa66419db3510a86774006cb.png",
+          "size": "medium"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/174s/190429befa66419db3510a86774006cb.png",
+          "size": "large"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/190429befa66419db3510a86774006cb.png",
+          "size": "extralarge"
+        }],
+        "streamable": "0",
+        "mbid": "fa345686-b9cf-47d4-9862-e37e9199c4e5"
+      }, {
+        "name": "The Bones of What You Believe",
+        "artist": "CHVRCHES",
+        "url": "https://www.last.fm/music/CHVRCHES/The+Bones+of+What+You+Believe",
+        "image": [{
+          "#text": "https://lastfm.freetls.fastly.net/i/u/34s/4857b5e7f93d4e1e9bdde4166e7062e6.png",
+          "size": "small"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/64s/4857b5e7f93d4e1e9bdde4166e7062e6.png",
+          "size": "medium"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/174s/4857b5e7f93d4e1e9bdde4166e7062e6.png",
+          "size": "large"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/4857b5e7f93d4e1e9bdde4166e7062e6.png",
+          "size": "extralarge"
+        }],
+        "streamable": "0",
+        "mbid": "cac2fc42-25ce-4021-8030-39401f2563cf"
+      }, {
+        "name": "Believe Acoustic",
+        "artist": "Justin Bieber",
+        "url": "https://www.last.fm/music/Justin+Bieber/Believe+Acoustic",
+        "image": [{
+          "#text": "https://lastfm.freetls.fastly.net/i/u/34s/60176ed0b8764fb6cfdb612566034bbc.png",
+          "size": "small"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/64s/60176ed0b8764fb6cfdb612566034bbc.png",
+          "size": "medium"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/174s/60176ed0b8764fb6cfdb612566034bbc.png",
+          "size": "large"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/60176ed0b8764fb6cfdb612566034bbc.png",
+          "size": "extralarge"
+        }],
+        "streamable": "0",
+        "mbid": "71d2222c-021e-46f6-baf7-49a7c1d0735d"
+      }, {
+        "name": "There Is a Hell, Believe Me I've Seen It. There Is a Heaven, Let's Keep It a Secret",
+        "artist": "Bring Me the Horizon",
+        "url": "https://www.last.fm/music/Bring+Me+the+Horizon/There+Is+a+Hell,+Believe+Me+I%27ve+Seen+It.+There+Is+a+Heaven,+Let%27s+Keep+It+a+Secret",
+        "image": [{
+          "#text": "https://lastfm.freetls.fastly.net/i/u/34s/278d843ca23c37a3f64dbbfea052e6b4.png",
+          "size": "small"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/64s/278d843ca23c37a3f64dbbfea052e6b4.png",
+          "size": "medium"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/174s/278d843ca23c37a3f64dbbfea052e6b4.png",
+          "size": "large"
+        }, {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/278d843ca23c37a3f64dbbfea052e6b4.png",
+          "size": "extralarge"
+        }],
+        "streamable": "0",
+        "mbid": "50b69889-a425-4e70-941b-7a8aea7f3b1f"
+      }]
+    },
+    "@attr": {
+      "for": "believe"
+    }
+  }
+}

@@ -14,7 +14,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class NetworkModule {
+class FakeNetworkModule {
 
     @Provides
     fun provideOkHttp(): OkHttpClient {
@@ -35,5 +35,5 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideBaseUrl(): String = "https://ws.audioscrobbler.com/2.0/"
+    fun provideBaseUrl(): String = "http://127.0.0.1:8080/"
 }
