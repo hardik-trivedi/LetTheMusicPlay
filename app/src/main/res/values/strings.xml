@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">LetTheMusicPlay</string>
     <string name="search">Search</string>
+    <string name="album_art_content_description">album art image</string>
 </resources>

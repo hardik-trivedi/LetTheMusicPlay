@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.hardiktrivedi.letthemusicplay.R
 import com.hardiktrivedi.letthemusicplay.data.model.Album
 import com.hardiktrivedi.letthemusicplay.databinding.AlbumListItemBinding
 import com.squareup.picasso.Picasso
@@ -26,7 +27,12 @@ class AlbumListAdapter :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Album) {
             with(binding) {
-                Picasso.get().load(item.largeAlbumArtUrl).into(albumArtImageView);
+                Picasso.get()
+                    .load(item.largeAlbumArtUrl)
+                    .placeholder(R.drawable.ic_album_placeholder)
+                    .into(albumArtImageView)
+                albumArtImageView.contentDescription =
+                    "${item.name} ${albumArtImageView.context.getString(R.string.album_art_content_description)}"
                 albumNameTextView.text = item.name
                 albumArtistTextView.text = item.artist
             }
@@ -36,7 +42,7 @@ class AlbumListAdapter :
 
 private class AlbumListDiffCallback : DiffUtil.ItemCallback<Album>() {
     override fun areItemsTheSame(oldItem: Album, newItem: Album): Boolean {
-        return oldItem.name == newItem.name && oldItem.artist ==  newItem.artist
+        return oldItem.name == newItem.name && oldItem.artist == newItem.artist
     }
 
     override fun areContentsTheSame(oldItem: Album, newItem: Album): Boolean {
