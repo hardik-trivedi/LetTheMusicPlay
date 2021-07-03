@@ -2,6 +2,7 @@ package com.hardiktrivedi.letthemusicplay.search
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -35,6 +36,15 @@ class AlbumListAdapter :
                     "${item.name} ${albumArtImageView.context.getString(R.string.album_art_content_description)}"
                 albumNameTextView.text = item.name
                 albumArtistTextView.text = item.artist
+                root.setOnClickListener {
+                    val action =
+                        SearchAlbumFragmentDirections.actionSearchAlbumFragmentToAlbumDetailFragment(
+                            artist = item.name,
+                            album = item.artist
+                        )
+                    it.findNavController().navigate(action)
+
+                }
             }
         }
     }
