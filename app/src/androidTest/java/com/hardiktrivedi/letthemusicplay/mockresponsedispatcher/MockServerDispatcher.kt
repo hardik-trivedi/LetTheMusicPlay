@@ -8,11 +8,18 @@ import java.io.InputStreamReader
 class MockServerDispatcher {
     internal inner class RequestDispatcher : Dispatcher() {
         override fun dispatch(request: RecordedRequest): MockResponse {
-            return if (request.requestUrl?.query?.contains("album.search") == true) {
-                MockResponse().setResponseCode(200)
-                    .setBody(getJsonContent("album_list_success.json"))
-            } else {
-                MockResponse().setResponseCode(400)
+            return when {
+                request.requestUrl?.query?.contains("album.search") == true -> {
+                    MockResponse().setResponseCode(200)
+                        .setBody(getJsonContent("album_list_success.json"))
+                }
+                request.requestUrl?.query?.contains("album.getinfo") == true -> {
+                    MockResponse().setResponseCode(200)
+                        .setBody(getJsonContent("album_detail_success.json"))
+                }
+                else -> {
+                    MockResponse().setResponseCode(400)
+                }
             }
         }
     }

@@ -67,6 +67,7 @@ class SearchAlbumFragmentTest {
 
         Espresso.closeSoftKeyboard()
         onView(isRoot()).perform(waitForViewToBeVisible(R.id.albumRecyclerView))
+        onView(isRoot()).perform(waitForViewToBeVisible(R.id.albumArtistTextView))
 
         checkContentDescriptionInRecyclerView(0, R.id.albumArtImageView, "Believe album art image")
         checkContentInRecyclerView(0, R.id.albumNameTextView, "Believe")

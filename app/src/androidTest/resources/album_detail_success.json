@@ -1,0 +1,120 @@
+{
+  "album": {
+    "listeners": "743158",
+    "playcount": "65514554",
+    "wiki": {
+      "published": "03 Mar 2017, 18:40",
+      "content": "Blond(e) is the second studio album by American singer Frank Ocean. It was released on August 20, 2016, exclusively on the iTunes Store and Apple Music along with a CD from the Boys Don't Cry Magazine which features an extra verse on \"Nikes\" by KOHH.\n\n <a href=\"https:\/\/www.last.fm\/music\/Frank+Ocean\/Blonde\">Read more on Last.fm<\/a>. User-contributed text is available under the Creative Commons By-SA License; additional terms may apply.",
+      "summary": "Blond(e) is the second studio album by American singer Frank Ocean. It was released on August 20, 2016, exclusively on the iTunes Store and Apple Music along with a CD from the Boys Don't Cry Magazine which features an extra verse on \"Nikes\" by KOHH. <a href=\"https:\/\/www.last.fm\/music\/Frank+Ocean\/Blonde\">Read more on Last.fm<\/a>."
+    },
+    "tracks": {
+      "track": [
+        {
+          "artist": {
+            "url": "https:\/\/www.last.fm\/music\/Frank+Ocean",
+            "name": "Frank Ocean",
+            "mbid": "e520459c-dff4-491d-a6e4-c97be35e0044"
+          },
+          "@attr": {
+            "rank": 1
+          },
+          "duration": 314,
+          "url": "https:\/\/www.last.fm\/music\/Frank+Ocean\/Blonde\/Nikes",
+          "name": "Nikes",
+          "streamable": {
+            "fulltrack": "0",
+            "#text": "0"
+          }
+        },
+        {
+          "artist": {
+            "url": "https:\/\/www.last.fm\/music\/Frank+Ocean",
+            "name": "Frank Ocean",
+            "mbid": "e520459c-dff4-491d-a6e4-c97be35e0044"
+          },
+          "@attr": {
+            "rank": 2
+          },
+          "duration": 249,
+          "url": "https:\/\/www.last.fm\/music\/Frank+Ocean\/Blonde\/Ivy",
+          "name": "Ivy",
+          "streamable": {
+            "fulltrack": "0",
+            "#text": "0"
+          }
+        },
+        {
+          "artist": {
+            "url": "https:\/\/www.last.fm\/music\/Frank+Ocean",
+            "name": "Frank Ocean",
+            "mbid": "e520459c-dff4-491d-a6e4-c97be35e0044"
+          },
+          "@attr": {
+            "rank": 3
+          },
+          "duration": 184,
+          "url": "https:\/\/www.last.fm\/music\/Frank+Ocean\/Blonde\/Pink+%252B+White",
+          "name": "Pink + White",
+          "streamable": {
+            "fulltrack": "0",
+            "#text": "0"
+          }
+        }
+      ]
+    },
+    "image": [
+      {
+        "size": "small",
+        "#text": "https:\/\/lastfm.freetls.fastly.net\/i\/u\/34s\/b7498614ca565faaa2704654b638024e.png"
+      },
+      {
+        "size": "medium",
+        "#text": "https:\/\/lastfm.freetls.fastly.net\/i\/u\/64s\/b7498614ca565faaa2704654b638024e.png"
+      },
+      {
+        "size": "large",
+        "#text": "https:\/\/lastfm.freetls.fastly.net\/i\/u\/174s\/b7498614ca565faaa2704654b638024e.png"
+      },
+      {
+        "size": "extralarge",
+        "#text": "https:\/\/lastfm.freetls.fastly.net\/i\/u\/300x300\/b7498614ca565faaa2704654b638024e.png"
+      },
+      {
+        "size": "mega",
+        "#text": "https:\/\/lastfm.freetls.fastly.net\/i\/u\/300x300\/b7498614ca565faaa2704654b638024e.png"
+      },
+      {
+        "size": "",
+        "#text": "https:\/\/lastfm.freetls.fastly.net\/i\/u\/300x300\/b7498614ca565faaa2704654b638024e.png"
+      }
+    ],
+    "tags": {
+      "tag": [
+        {
+          "name": "rnb",
+          "url": "https:\/\/www.last.fm\/tag\/rnb"
+        },
+        {
+          "name": "2016",
+          "url": "https:\/\/www.last.fm\/tag\/2016"
+        },
+        {
+          "name": "alternative rnb",
+          "url": "https:\/\/www.last.fm\/tag\/alternative+rnb"
+        },
+        {
+          "name": "pop",
+          "url": "https:\/\/www.last.fm\/tag\/pop"
+        },
+        {
+          "name": "art pop",
+          "url": "https:\/\/www.last.fm\/tag\/art+pop"
+        }
+      ]
+    },
+    "url": "https:\/\/www.last.fm\/music\/Frank+Ocean\/Blonde",
+    "artist": "Frank Ocean",
+    "name": "Blonde",
+    "mbid": "08f54f68-7c89-4e22-8a0f-ac2b06e48568"
+  }
+}
