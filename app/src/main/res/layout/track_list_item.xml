@@ -37,6 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/space_8dp"
         tools:text="0:00"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintBottom_toBottomOf="@+id/artistTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/titleTextView" />
