@@ -1,15 +1,19 @@
 package com.hardiktrivedi.letthemusicplay.search
 
+import androidx.test.espresso.Espresso
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.IdlingRegistry
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.action.ViewActions.typeText
+import androidx.test.espresso.matcher.ViewMatchers.isRoot
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.hardiktrivedi.letthemusicplay.R
 import com.hardiktrivedi.letthemusicplay.hilt.NetworkModule
 import com.hardiktrivedi.letthemusicplay.mockresponsedispatcher.MockServerDispatcher
+import com.hardiktrivedi.letthemusicplay.util.hasViewWithIdAndTextAtPosition
 import com.hardiktrivedi.letthemusicplay.util.launchFragmentInHiltContainer
+import com.hardiktrivedi.letthemusicplay.util.waitForViewToBeVisible
 import com.jakewharton.espresso.OkHttp3IdlingResource
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
@@ -52,12 +56,45 @@ class SearchAlbumFragmentTest {
         mockWebServer.shutdown()
     }
 
+    //TODO Disable animation
     @Test
-    fun AlbumListIsRendered() {
+    fun albumListIsRendered() {
         launchFragmentInHiltContainer<SearchAlbumFragment> {
         }
         onView(withId(R.id.actionSearch)).perform(click())
         onView(withId(androidx.appcompat.R.id.search_src_text)).perform(typeText("b"))
 
+        Espresso.closeSoftKeyboard()
+        onView(isRoot()).perform(waitForViewToBeVisible(R.id.albumRecyclerView))
+
+        checkContentInRecyclerView(0, R.id.albumNameTextView, "Believe")
+        checkContentInRecyclerView(0, R.id.albumArtistTextView, "Disturbed")
+
+        checkContentInRecyclerView(1, R.id.albumNameTextView, "Make Believe")
+        checkContentInRecyclerView(1, R.id.albumArtistTextView, "Weezer")
+
+        checkContentInRecyclerView(2, R.id.albumNameTextView, "Believe (Deluxe Edition)")
+        checkContentInRecyclerView(2, R.id.albumArtistTextView, "Justin Bieber")
+
+        checkContentInRecyclerView(3, R.id.albumNameTextView, "Believe")
+        checkContentInRecyclerView(3, R.id.albumArtistTextView, "Justin Bieber")
+
+        checkContentInRecyclerView(4, R.id.albumNameTextView, "Believe")
+        checkContentInRecyclerView(4, R.id.albumArtistTextView, "Cher")
+
+    }
+
+    private fun checkContentInRecyclerView(
+        position: Int,
+        viewId: Int,
+        expectedValue: CharSequence
+    ) {
+        onView(withId(R.id.albumRecyclerView)).check(
+            hasViewWithIdAndTextAtPosition(
+                position,
+                viewId,
+                expectedValue
+            )
+        )
     }
 }
