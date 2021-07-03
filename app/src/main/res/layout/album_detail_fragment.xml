@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/albumArtImageView"
         android:layout_width="@dimen/album_art_dimens"
         android:layout_height="@dimen/album_art_dimens"
         android:layout_marginStart="@dimen/space_16dp"
@@ -25,7 +25,7 @@
         android:layout_marginEnd="@dimen/space_16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/albumArtImageView" />
 
     <TextView
         android:id="@+id/albumArtistTextView"
@@ -61,6 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/albumPublishedDate" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/trackRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="@dimen/space_16dp"
