@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.hardiktrivedi.letthemusicplay.data.model.Track
 import com.hardiktrivedi.letthemusicplay.databinding.TrackListItemBinding
+import com.hardiktrivedi.letthemusicplay.util.toSongDuration
 
 class TrackListAdapter :
     ListAdapter<Track, TrackListAdapter.TrackListViewHolder>(TrackListDiffCallback()) {
@@ -27,7 +28,7 @@ class TrackListAdapter :
             with(binding) {
                 titleTextView.text = item.name
                 artistTextView.text = item.artist.name
-                durationTextView.text = item.duration.toString()
+                durationTextView.text = item.duration.toSongDuration()
             }
         }
     }

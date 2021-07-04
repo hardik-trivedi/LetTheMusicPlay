@@ -73,20 +73,20 @@ class AlbumDetailFragmentTest {
         onView(withId(R.id.albumNameTextView)).check(matches(withText("Blonde")))
         onView(withId(R.id.albumArtistTextView)).check(matches(withText("Frank Ocean")))
         onView(withId(R.id.albumPublishedDate)).check(matches(withText("03 Mar 2017, 18:40")))
-        onView(withId(R.id.listenerCountTextView)).check(matches(withText("743158")))
-        onView(withId(R.id.playCountTextView)).check(matches(withText("65514554")))
+        onView(withId(R.id.listenerCountTextView)).check(matches(withText("743.2 K")))
+        onView(withId(R.id.playCountTextView)).check(matches(withText("65.5 M")))
 
         checkContentInRecyclerView(0, R.id.titleTextView, "Nikes")
         checkContentInRecyclerView(0, R.id.artistTextView, "Frank Ocean")
-        checkContentInRecyclerView(0, R.id.durationTextView, "314")
+        checkContentInRecyclerView(0, R.id.durationTextView, "05:14")
 
         checkContentInRecyclerView(1, R.id.titleTextView, "Ivy")
         checkContentInRecyclerView(1, R.id.artistTextView, "Frank Ocean")
-        checkContentInRecyclerView(1, R.id.durationTextView, "249")
+        checkContentInRecyclerView(1, R.id.durationTextView, "04:09")
 
         checkContentInRecyclerView(2, R.id.titleTextView, "Pink + White")
         checkContentInRecyclerView(2, R.id.artistTextView, "Frank Ocean")
-        checkContentInRecyclerView(2, R.id.durationTextView, "184")
+        checkContentInRecyclerView(2, R.id.durationTextView, "03:04")
 
     }
 

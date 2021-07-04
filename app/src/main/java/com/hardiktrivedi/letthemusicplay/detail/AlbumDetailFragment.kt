@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.hardiktrivedi.letthemusicplay.R
 import com.hardiktrivedi.letthemusicplay.databinding.AlbumDetailFragmentBinding
 import com.hardiktrivedi.letthemusicplay.util.largeAlbumArtUrl
+import com.hardiktrivedi.letthemusicplay.util.toCountable
 import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
@@ -59,8 +60,8 @@ class AlbumDetailFragment : Fragment(R.layout.album_detail_fragment) {
                         albumSummaryTextView.text = Html.fromHtml(it.wiki.summary)
                     }
                     albumSummaryTextView.movementMethod = ScrollingMovementMethod()
-                    listenerCountTextView.text = it.listeners
-                    playCountTextView.text = it.playCount
+                    listenerCountTextView.text = it.listeners.toLong().toCountable()
+                    playCountTextView.text = it.playCount.toLong().toCountable()
                     with(trackRecyclerView) {
                         layoutManager = LinearLayoutManager(activity)
                         adapter = trackListAdapter
