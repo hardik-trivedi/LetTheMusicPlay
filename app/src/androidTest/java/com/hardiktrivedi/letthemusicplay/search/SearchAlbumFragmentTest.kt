@@ -55,7 +55,6 @@ class SearchAlbumFragmentTest {
         mockWebServer.shutdown()
     }
 
-    //TODO Disable animation
     @Test
     fun albumListIsRendered() {
         launchFragmentInHiltContainer<SearchAlbumFragment> {}

@@ -1,5 +1,8 @@
 package com.hardiktrivedi.letthemusicplay.util
 
+/**
+ * Extension function to change a number to track duration.
+ */
 fun Int.toSongDuration(): String {
     val hours = this / 3600
     val minutes = this % 3600 / 60

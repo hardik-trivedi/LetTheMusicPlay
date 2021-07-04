@@ -23,6 +23,9 @@ import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.launch
 import java.net.UnknownHostException
 
+/**
+ * A fragment which is used to search the album by it's name.
+ */
 @AndroidEntryPoint
 class SearchAlbumFragment : Fragment(R.layout.search_album_fragment) {
 
@@ -64,6 +67,10 @@ class SearchAlbumFragment : Fragment(R.layout.search_album_fragment) {
         searchView?.setOnQueryTextListener(object :
             SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
+                /**
+                 * User has completed typing and press the enter or ime button on soft keyboard.
+                 * After user taps on such action button keyboard is hidden and search is performed.
+                 */
                 searchView.hideKeyboard()
                 performSearch(query)
                 return true

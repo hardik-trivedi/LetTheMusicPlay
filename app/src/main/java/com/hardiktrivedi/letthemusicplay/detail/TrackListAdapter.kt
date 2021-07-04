@@ -34,6 +34,9 @@ class TrackListAdapter :
     }
 }
 
+/**
+ * Diff logic helps RecyclerView to identify the new entiry in adapter
+ */
 private class TrackListDiffCallback : DiffUtil.ItemCallback<Track>() {
     override fun areItemsTheSame(oldItem: Track, newItem: Track): Boolean {
         return oldItem.name == newItem.name && oldItem.artist.name == newItem.artist.name

@@ -1,18 +1,29 @@
 package com.hardiktrivedi.letthemusicplay.util
 
+import kotlin.math.pow
+import kotlin.math.roundToInt
+
+/**
+ * Extension function to change Long to Kwid, Million and Billion.
+ */
 fun Long.toCountable(): String {
     val postfix = arrayOf("K", "M", "B")
     val size: Int = java.lang.String.valueOf(this).length
-    return if (size >= 4 && size < 7) {
-        val value = Math.pow(10.0, 1.0).toInt()
-        (Math.round(this / 1000.0 * value).toDouble() / value).toString() + " " + postfix.get(0)
-    } else if (size > 6 && size < 10) {
-        val value = Math.pow(10.0, 1.0).toInt()
-        (Math.round(this / 1000000.0 * value).toDouble() / value).toString() + " " + postfix.get(1)
-    } else if (size >= 10) {
-        val value = Math.pow(10.0, 1.0).toInt()
-        (Math.round(this / 1000000000.0 * value).toDouble() / value).toString() + " " + postfix.get(2)
-    } else {
-        this.toString() + ""
+    return when {
+        size in 4..6 -> {
+            val value = 10.0.pow(1.0).toInt()
+            ((this / 1000.0 * value).roundToInt().toDouble() / value).toString() + " " + postfix[0]
+        }
+        size in 7..9 -> {
+            val value = 10.0.pow(1.0).toInt()
+            ((this / 1000000.0 * value).roundToInt().toDouble() / value).toString() + " " + postfix[1]
+        }
+        size >= 10 -> {
+            val value = 10.0.pow(1.0).toInt()
+            ((this / 1000000000.0 * value).roundToInt().toDouble() / value).toString() + " " + postfix[2]
+        }
+        else -> {
+            this.toString() + ""
+        }
     }
 }

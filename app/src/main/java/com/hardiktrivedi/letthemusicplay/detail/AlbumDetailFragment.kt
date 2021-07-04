@@ -24,7 +24,9 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import java.net.UnknownHostException
 
-
+/**
+ * A fragment which is used to display detail of the album.
+ */
 @AndroidEntryPoint
 class AlbumDetailFragment : Fragment(R.layout.album_detail_fragment) {
 

@@ -33,8 +33,11 @@ It captures business requirements in form of test cases.
 | ----------- | ----------- |
 | ![Unit test](media/UnitTest.png) | ![Espresso test](media/UI_test.png) |
 
+
 - **Run unit test:** `./gradlew :app:test`
 - **Run espresso test:** `adb shell am instrument -w -m  --no-window-animation  -e package com.hardiktrivedi.letthemusicplay -e debug false com.hardiktrivedi.letthemusicplay.test/com.hardiktrivedi.letthemusicplay.LetTheMusicPlayTestRunner`
+
+**Note: To get consistent result of espresso UI tests, make sure you disable animation on your emulator**
 
 ## Libraries used
 | Library name | Purpose |

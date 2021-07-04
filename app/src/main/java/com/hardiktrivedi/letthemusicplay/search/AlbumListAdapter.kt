@@ -49,6 +49,9 @@ class AlbumListAdapter :
     }
 }
 
+/**
+ * Diff logic helps RecyclerView to identify the new entiry in adapter
+ */
 private class AlbumListDiffCallback : DiffUtil.ItemCallback<Album>() {
     override fun areItemsTheSame(oldItem: Album, newItem: Album): Boolean {
         return oldItem.name == newItem.name && oldItem.artist == newItem.artist
