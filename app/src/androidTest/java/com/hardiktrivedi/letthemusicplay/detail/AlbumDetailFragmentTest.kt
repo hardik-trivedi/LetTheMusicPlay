@@ -87,4 +87,33 @@ class AlbumDetailFragmentTest {
         onRecyclerView(R.id.trackRecyclerView) { hasView(2, R.id.artistTextView, "Frank Ocean") }
         onRecyclerView(R.id.trackRecyclerView) { hasView(2, R.id.durationTextView, "03:04") }
     }
+
+    @Test
+    fun albumDetailIsDisplayedWithoutPublishedDateAndSummary() {
+        val args = Bundle().apply {
+            putString("artist", "Weezer")
+            putString("album", "Make")
+        }
+        launchFragmentInHiltContainer<AlbumDetailFragment>(fragmentArgs = args) {}
+        onView(ViewMatchers.isRoot())
+            .perform(waitForViewToBeVisible(R.id.trackRecyclerView))
+        onView(ViewMatchers.isRoot())
+            .perform(waitForViewToBeVisible(R.id.titleTextView))
+
+
+        onView(withId(R.id.albumNameTextView)).check(matches(withText("Make Believe")))
+        onView(withId(R.id.albumArtistTextView)).check(matches(withText("Weezer")))
+        onView(withId(R.id.albumPublishedDate)).check(matches(withText("")))
+        onView(withId(R.id.albumSummaryTextView)).check(matches(withText("")))
+        onView(withId(R.id.listenerCountTextView)).check(matches(withText("743.2 K")))
+        onView(withId(R.id.playCountTextView)).check(matches(withText("65.5 M")))
+
+        onRecyclerView(R.id.trackRecyclerView) { hasView(0, R.id.titleTextView, "Beverly Hills") }
+        onRecyclerView(R.id.trackRecyclerView) { hasView(0, R.id.artistTextView, "Weezer") }
+        onRecyclerView(R.id.trackRecyclerView) { hasView(0, R.id.durationTextView, "05:14") }
+
+        onRecyclerView(R.id.trackRecyclerView) { hasView(1, R.id.titleTextView, "Perfect Situation") }
+        onRecyclerView(R.id.trackRecyclerView) { hasView(1, R.id.artistTextView, "Weezer") }
+        onRecyclerView(R.id.trackRecyclerView) { hasView(1, R.id.durationTextView, "04:09") }
+    }
 }

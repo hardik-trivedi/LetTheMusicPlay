@@ -79,12 +79,12 @@ class AlbumDetailFragment : Fragment(R.layout.album_detail_fragment) {
                 .into(albumArtImageView)
             albumNameTextView.text = it.name
             albumArtistTextView.text = it.artist
-            albumPublishedDate.text = it.wiki.published
+            albumPublishedDate.text = it.wiki?.published
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 albumSummaryTextView.text =
-                    Html.fromHtml(it.wiki.summary, Html.FROM_HTML_MODE_COMPACT)
+                    Html.fromHtml(it.wiki?.summary?:"", Html.FROM_HTML_MODE_COMPACT)
             } else {
-                albumSummaryTextView.text = Html.fromHtml(it.wiki.summary)
+                albumSummaryTextView.text = Html.fromHtml(it.wiki?.summary?:"")
             }
             albumSummaryTextView.movementMethod = ScrollingMovementMethod()
             listenerCountTextView.text = it.listeners.toLong().toCountable()

@@ -1,0 +1,98 @@
+{
+  "album": {
+    "listeners": "743158",
+    "playcount": "65514554",
+    "artist": "Weezer",
+    "mbid": "09fc6dcd-e58a-4f22-99d9-3e57d1d05a64",
+    "tracks": {
+      "track": [
+        {
+          "artist": {
+            "url": "https:\/\/www.last.fm\/music\/Weezer",
+            "name": "Weezer",
+            "mbid": "6fe07aa5-fec0-4eca-a456-f29bff451b04"
+          },
+          "@attr": {
+            "rank": 1
+          },
+          "duration": 314,
+          "url": "https:\/\/www.last.fm\/music\/Weezer\/Make+Believe\/Beverly+Hills",
+          "name": "Beverly Hills",
+          "streamable": {
+            "fulltrack": "0",
+            "#text": "0"
+          }
+        },
+        {
+          "artist": {
+            "url": "https:\/\/www.last.fm\/music\/Weezer",
+            "name": "Weezer",
+            "mbid": "6fe07aa5-fec0-4eca-a456-f29bff451b04"
+          },
+          "@attr": {
+            "rank": 2
+          },
+          "duration": 249,
+          "url": "https:\/\/www.last.fm\/music\/Weezer\/Make+Believe\/Perfect+Situation",
+          "name": "Perfect Situation",
+          "streamable": {
+            "fulltrack": "0",
+            "#text": "0"
+          }
+        }
+      ]
+    },
+    "url": "https:\/\/www.last.fm\/music\/Weezer\/Make+Believe",
+    "tags": {
+      "tag": [
+        {
+          "name": "rock",
+          "url": "https:\/\/www.last.fm\/tag\/rock"
+        },
+        {
+          "name": "alternative",
+          "url": "https:\/\/www.last.fm\/tag\/alternative"
+        },
+        {
+          "name": "alternative rock",
+          "url": "https:\/\/www.last.fm\/tag\/alternative+rock"
+        },
+        {
+          "name": "2005",
+          "url": "https:\/\/www.last.fm\/tag\/2005"
+        },
+        {
+          "name": "indie rock",
+          "url": "https:\/\/www.last.fm\/tag\/indie+rock"
+        }
+      ]
+    },
+    "name": "Make Believe",
+    "image": [
+      {
+        "size": "small",
+        "#text": "https:\/\/lastfm.freetls.fastly.net\/i\/u\/34s\/1c8439b16ed4ca4e0bac727e7b325581.jpg"
+      },
+      {
+        "size": "medium",
+        "#text": "https:\/\/lastfm.freetls.fastly.net\/i\/u\/64s\/1c8439b16ed4ca4e0bac727e7b325581.jpg"
+      },
+      {
+        "size": "large",
+        "#text": "https:\/\/lastfm.freetls.fastly.net\/i\/u\/174s\/1c8439b16ed4ca4e0bac727e7b325581.jpg"
+      },
+      {
+        "size": "extralarge",
+        "#text": "https:\/\/lastfm.freetls.fastly.net\/i\/u\/300x300\/1c8439b16ed4ca4e0bac727e7b325581.jpg"
+      },
+      {
+        "size": "mega",
+        "#text": "https:\/\/lastfm.freetls.fastly.net\/i\/u\/300x300\/1c8439b16ed4ca4e0bac727e7b325581.jpg"
+      },
+      {
+        "size": "",
+        "#text": "https:\/\/lastfm.freetls.fastly.net\/i\/u\/300x300\/1c8439b16ed4ca4e0bac727e7b325581.jpg"
+      }
+    ]
+  }
+}

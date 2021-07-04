@@ -34,7 +34,7 @@ data class AlbumDetailResponse(val album: AlbumObject)
 data class AlbumObject(
     val listeners: String,
     @SerializedName("playcount") val playCount: String,
-    val wiki: Wiki,
+    val wiki: Wiki?,
     val tracks: Tracks?,
     val image: List<Image>,
     val name: String,
