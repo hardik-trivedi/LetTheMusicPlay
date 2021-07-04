@@ -9,6 +9,20 @@ The code is fully written in [Kotlin](https://kotlinlang.org/)
 | ----------- | ----------- |
 | ![List](media/Screenshot_list.png) | ![Detail](media/Screenshot_detail.png) |
 
+## How to build and run application
+This application makes network call. To make a network call it uses API key. You need to generate your API key from [last.fm](https://www.last.fm/api/account/create)
+
+Put your API key in `local.properties` file e.g.
+```
+API_KEY="<Your API key>"
+```
+App will automatically pick this API key via `BuildConfig` class e.g.
+```
+@Query("api_key") apiKey: String = BuildConfig.API_KEY
+```
+
+Now build and run as usual from your AndroidStudio.
+
 ## Application architecture
 Google recommended [app development architecture](https://developer.android.com/jetpack/guide) is followed. 
 For this architecture [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) is at the core of an architecture. 

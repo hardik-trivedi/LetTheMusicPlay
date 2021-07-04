@@ -1,27 +1,28 @@
 package com.hardiktrivedi.letthemusicplay.api
 
+import com.hardiktrivedi.letthemusicplay.BuildConfig
 import com.hardiktrivedi.letthemusicplay.data.model.AlbumDetailResponse
 import com.hardiktrivedi.letthemusicplay.data.model.AlbumSearchResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-// TODO Put api key on proper place
 interface AlbumApiService {
     @GET(".")
     suspend fun searchByAlbumName(
         @Query("album") album: String,
         @Query("method") method: String = "album.search",
-        @Query("api_key") apiKey: String = "cc673eb8b6d5e4d1875d357fefccaef1",
+        /* Please make sure you have put your last.fm api key in local.properties file. Check README.md for more info*/
+        @Query("api_key") apiKey: String = BuildConfig.API_KEY,
         @Query("format") format: String = "json"
     ): AlbumSearchResponse
-
 
     @GET(".")
     suspend fun getAlbumDetail(
         @Query("artist") artist: String,
         @Query("album") album: String,
         @Query("method") method: String = "album.getinfo",
-        @Query("api_key") apiKey: String = "cc673eb8b6d5e4d1875d357fefccaef1",
+        /* Please make sure you have put your last.fm api key in local.properties file. Check README.md for more info*/
+        @Query("api_key") apiKey: String = BuildConfig.API_KEY,
         @Query("format") format: String = "json"
     ): AlbumDetailResponse
 }

@@ -6,6 +6,10 @@ plugins {
     id 'androidx.navigation.safeargs.kotlin'
 }
 
+def apiKeyPropertiesFile = rootProject.file("local.properties")
+def apiKeyProperties = new Properties()
+apiKeyProperties.load(new FileInputStream(apiKeyPropertiesFile))
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -18,6 +22,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "com.hardiktrivedi.letthemusicplay.LetTheMusicPlayTestRunner"
+
+        /* Please make sure you have put your last.fm api key in local.properties file. Check README.md for more info*/
+        buildConfigField("String", "API_KEY", apiKeyProperties['API_KEY'])
     }
 
     buildTypes {
