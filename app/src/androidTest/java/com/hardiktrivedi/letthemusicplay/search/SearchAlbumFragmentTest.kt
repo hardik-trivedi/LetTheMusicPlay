@@ -1,10 +1,10 @@
 package com.hardiktrivedi.letthemusicplay.search
 
+import android.view.KeyEvent
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.IdlingRegistry
-import androidx.test.espresso.action.ViewActions.click
-import androidx.test.espresso.action.ViewActions.typeText
+import androidx.test.espresso.action.ViewActions.*
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -60,9 +60,9 @@ class SearchAlbumFragmentTest {
     fun albumListIsRendered() {
         launchFragmentInHiltContainer<SearchAlbumFragment> {}
         onView(withId(R.id.actionSearch)).perform(click())
-        onView(withId(androidx.appcompat.R.id.search_src_text)).perform(typeText("b"))
+        onView(withId(androidx.appcompat.R.id.search_src_text)).perform(typeText("believe"))
+        onView(withId(androidx.appcompat.R.id.search_src_text)).perform(pressImeActionButton())
 
-        Espresso.closeSoftKeyboard()
         onView(isRoot()).perform(waitForViewToBeVisible(R.id.albumRecyclerView))
         onView(isRoot()).perform(waitForViewToBeVisible(R.id.albumArtistTextView))
 
@@ -83,7 +83,13 @@ class SearchAlbumFragmentTest {
                 "Make Believe album art image"
             )
         }
-        onRecyclerView(R.id.albumRecyclerView) { hasView(1, R.id.albumNameTextView, "Make Believe") }
+        onRecyclerView(R.id.albumRecyclerView) {
+            hasView(
+                1,
+                R.id.albumNameTextView,
+                "Make Believe"
+            )
+        }
 
         onRecyclerView(R.id.albumRecyclerView) { hasView(1, R.id.albumArtistTextView, "Weezer") }
 
@@ -138,14 +144,14 @@ class SearchAlbumFragmentTest {
     }
 
     @Test
-    fun invalidSearchValueExceptionIsHandled() {
+    fun exceptionIsHandled() {
         launchFragmentInHiltContainer<SearchAlbumFragment> {}
         onView(withId(R.id.actionSearch)).perform(click())
-        onView(withId(androidx.appcompat.R.id.search_src_text)).perform(typeText(" "))
+        onView(withId(androidx.appcompat.R.id.search_src_text)).perform(typeText("Error"))
+        onView(withId(androidx.appcompat.R.id.search_src_text)).perform(pressImeActionButton())
 
-        Espresso.closeSoftKeyboard()
         onView(isRoot()).perform(waitForViewToBeVisible(com.google.android.material.R.id.snackbar_text))
         onView(withId(com.google.android.material.R.id.snackbar_text))
-            .check(matches(withText("Please provide search value")))
+            .check(matches(withText("Something went wrong")))
     }
 }

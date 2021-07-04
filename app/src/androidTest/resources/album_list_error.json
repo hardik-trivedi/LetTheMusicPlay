@@ -1,0 +1,41 @@
+{
+  "results": {
+    "opensearch:Query": {
+      "#text": "",
+      "role": "request",
+      "searchTerms": "believe",
+      "startPage": "1"
+    },
+    "opensearch:totalResults": "135408",
+    "opensearch:startIndex": "0",
+    "opensearch:itemsPerPage": "10",
+    "albummatches": {
+      "name": "Believe",
+      "artist": "Disturbed",
+      "url": "https://www.last.fm/music/Disturbed/Believe",
+      "image": [
+        {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/34s/dcf5cf4b9da64e979719a102acd222cc.png",
+          "size": "small"
+        },
+        {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/64s/dcf5cf4b9da64e979719a102acd222cc.png",
+          "size": "medium"
+        },
+        {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/174s/dcf5cf4b9da64e979719a102acd222cc.png",
+          "size": "large"
+        },
+        {
+          "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/dcf5cf4b9da64e979719a102acd222cc.png",
+          "size": "extralarge"
+        }
+      ],
+      "streamable": "0",
+      "mbid": "c559efc2-f734-41ae-93bd-2d78414e0356"
+    },
+    "@attr": {
+      "for": "believe"
+    }
+  }
+}

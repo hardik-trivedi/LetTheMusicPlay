@@ -9,9 +9,13 @@ class MockServerDispatcher {
     internal inner class RequestDispatcher : Dispatcher() {
         override fun dispatch(request: RecordedRequest): MockResponse {
             return when {
-                request.requestUrl?.query?.contains("album.search") == true -> {
+                request.requestUrl?.query?.contains("believe") == true -> {
                     MockResponse().setResponseCode(200)
                         .setBody(getJsonContent("album_list_success.json"))
+                }
+                request.requestUrl?.query?.contains("Error") == true -> {
+                    MockResponse().setResponseCode(400)
+                        .setBody(getJsonContent("album_list_error.json"))
                 }
                 request.requestUrl?.query?.contains("album.getinfo") == true -> {
                     MockResponse().setResponseCode(200)

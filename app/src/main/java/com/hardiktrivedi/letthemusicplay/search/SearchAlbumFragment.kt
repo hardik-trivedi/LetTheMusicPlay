@@ -1,7 +1,6 @@
 package com.hardiktrivedi.letthemusicplay.search
 
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -14,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.hardiktrivedi.letthemusicplay.R
 import com.hardiktrivedi.letthemusicplay.databinding.SearchAlbumFragmentBinding
+import com.hardiktrivedi.letthemusicplay.util.hideKeyboard
 import com.hardiktrivedi.letthemusicplay.util.showSnackBar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
@@ -60,14 +60,16 @@ class SearchAlbumFragment : Fragment(R.layout.search_album_fragment) {
     }
 
     private fun setUpSearchView(menuItem: MenuItem) {
-        (menuItem.actionView as? SearchView)?.setOnQueryTextListener(object :
+        val searchView = (menuItem.actionView as? SearchView)
+        searchView?.setOnQueryTextListener(object :
             SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(p0: String?): Boolean {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                searchView.hideKeyboard()
+                performSearch(query)
                 return true
             }
 
             override fun onQueryTextChange(newSearch: String?): Boolean {
-                performSearch(newSearch)
                 return true
             }
         }
@@ -83,11 +85,6 @@ class SearchAlbumFragment : Fragment(R.layout.search_album_fragment) {
                         is UnknownHostException -> binding.searchResultConstraintLayout.showSnackBar(
                             getString(
                                 R.string.no_internet_message
-                            )
-                        )
-                        is IllegalArgumentException -> binding.searchResultConstraintLayout.showSnackBar(
-                            getString(
-                                R.string.search_error_message
                             )
                         )
                         else -> {
