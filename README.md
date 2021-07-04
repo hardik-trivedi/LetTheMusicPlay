@@ -3,7 +3,7 @@ A demo android application which allow user to search and loads the music album 
 On click of album list item user can navigate to detail screen. It demonstrates several aspect of Android application development.
 The code is fully written in [Kotlin](https://kotlinlang.org/)
 ---
-![Application demo](media/AppDemo.gif =480x800)
+![Application demo](media/AppDemo.gif)
 
 | Album list | Album detail |
 | ----------- | ----------- |
@@ -33,8 +33,8 @@ It captures business requirements in form of test cases.
 | ----------- | ----------- |
 | ![Unit test](media/UnitTest.png) | ![Espresso test](media/UI_test.png) |
 
-- **Run unit test:** ./gradlew :app:test
-- **Run espresso test:** adb shell am instrument -w -m  --no-window-animation  -e package com.hardiktrivedi.letthemusicplay -e debug false com.hardiktrivedi.letthemusicplay.test/com.hardiktrivedi.letthemusicplay.LetTheMusicPlayTestRunner 
+- **Run unit test:** `./gradlew :app:test`
+- **Run espresso test:** `adb shell am instrument -w -m  --no-window-animation  -e package com.hardiktrivedi.letthemusicplay -e debug false com.hardiktrivedi.letthemusicplay.test/com.hardiktrivedi.letthemusicplay.LetTheMusicPlayTestRunner`
 
 ## Libraries used
 | Library name | Purpose |
