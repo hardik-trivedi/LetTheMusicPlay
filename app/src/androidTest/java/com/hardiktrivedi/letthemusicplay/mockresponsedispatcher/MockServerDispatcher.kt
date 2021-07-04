@@ -34,7 +34,7 @@ class MockServerDispatcher {
 
     private fun isAlbumDetailSuccess(request: RecordedRequest): Boolean {
         return request.requestUrl?.query?.contains("album.getinfo") == true && request.requestUrl?.query?.contains(
-            "Believe"
+            "Blonde"
         ) == true
     }
 
