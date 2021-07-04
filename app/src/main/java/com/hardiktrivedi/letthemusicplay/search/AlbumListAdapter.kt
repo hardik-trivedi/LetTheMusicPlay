@@ -10,6 +10,7 @@ import com.hardiktrivedi.letthemusicplay.R
 import com.hardiktrivedi.letthemusicplay.data.model.Album
 import com.hardiktrivedi.letthemusicplay.databinding.AlbumListItemBinding
 import com.hardiktrivedi.letthemusicplay.util.largeAlbumArtUrl
+import com.hardiktrivedi.letthemusicplay.util.loadUrl
 import com.squareup.picasso.Picasso
 
 class AlbumListAdapter :
@@ -29,10 +30,7 @@ class AlbumListAdapter :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Album) {
             with(binding) {
-                Picasso.get()
-                    .load(item.image.largeAlbumArtUrl)
-                    .placeholder(R.drawable.ic_album_placeholder)
-                    .into(albumArtImageView)
+                albumArtImageView.loadUrl(item.image.largeAlbumArtUrl)
                 albumArtImageView.contentDescription =
                     "${item.name} ${albumArtImageView.context.getString(R.string.album_art_content_description)}"
                 albumNameTextView.text = item.name

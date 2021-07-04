@@ -14,6 +14,7 @@ import com.hardiktrivedi.letthemusicplay.R
 import com.hardiktrivedi.letthemusicplay.data.model.AlbumObject
 import com.hardiktrivedi.letthemusicplay.databinding.AlbumDetailFragmentBinding
 import com.hardiktrivedi.letthemusicplay.util.largeAlbumArtUrl
+import com.hardiktrivedi.letthemusicplay.util.loadUrl
 import com.hardiktrivedi.letthemusicplay.util.showSnackBar
 import com.hardiktrivedi.letthemusicplay.util.toCountable
 import com.squareup.picasso.Picasso
@@ -73,10 +74,7 @@ class AlbumDetailFragment : Fragment(R.layout.album_detail_fragment) {
 
     private fun showAlbumDetail(it: AlbumObject) {
         with(binding) {
-            Picasso.get()
-                .load(it.image.largeAlbumArtUrl)
-                .placeholder(R.drawable.ic_album_placeholder)
-                .into(albumArtImageView)
+            albumArtImageView.loadUrl(it.image.largeAlbumArtUrl)
             albumNameTextView.text = it.name
             albumArtistTextView.text = it.artist
             albumPublishedDate.text = it.wiki?.published

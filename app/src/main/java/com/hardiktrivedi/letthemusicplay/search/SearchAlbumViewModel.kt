@@ -16,8 +16,7 @@ class SearchAlbumViewModel @Inject constructor(private val albumRepository: Albu
                 emit(it)
             }
         } else {
-            //TODO Handle gracefully
-            throw IllegalArgumentException("Search query cannot be empty or null")
+            throw IllegalArgumentException()
         }
     }
 }
