@@ -5,16 +5,13 @@ import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.IdlingRegistry
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.action.ViewActions.typeText
-import androidx.test.espresso.matcher.ViewMatchers.isRoot
-import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.hardiktrivedi.letthemusicplay.R
 import com.hardiktrivedi.letthemusicplay.hilt.NetworkModule
 import com.hardiktrivedi.letthemusicplay.mockresponsedispatcher.MockServerDispatcher
-import com.hardiktrivedi.letthemusicplay.util.hasViewWithIdAndContentDescriptionAtPosition
-import com.hardiktrivedi.letthemusicplay.util.hasViewWithIdAndTextAtPosition
-import com.hardiktrivedi.letthemusicplay.util.launchFragmentInHiltContainer
-import com.hardiktrivedi.letthemusicplay.util.waitForViewToBeVisible
+import com.hardiktrivedi.letthemusicplay.util.*
 import com.jakewharton.espresso.OkHttp3IdlingResource
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
@@ -46,9 +43,10 @@ class SearchAlbumFragmentTest {
     @Before
     fun setUp() {
         hiltRule.inject()
-        mockWebServer = MockWebServer()
-        mockWebServer.dispatcher = MockServerDispatcher().RequestDispatcher()
-        mockWebServer.start(8080)
+        mockWebServer = MockWebServer().apply {
+            dispatcher = MockServerDispatcher().RequestDispatcher()
+            start(8080)
+        }
         IdlingRegistry.getInstance().register(OkHttp3IdlingResource.create("okhttp", okHttp))
     }
 
@@ -60,8 +58,7 @@ class SearchAlbumFragmentTest {
     //TODO Disable animation
     @Test
     fun albumListIsRendered() {
-        launchFragmentInHiltContainer<SearchAlbumFragment> {
-        }
+        launchFragmentInHiltContainer<SearchAlbumFragment> {}
         onView(withId(R.id.actionSearch)).perform(click())
         onView(withId(androidx.appcompat.R.id.search_src_text)).perform(typeText("b"))
 
@@ -69,53 +66,86 @@ class SearchAlbumFragmentTest {
         onView(isRoot()).perform(waitForViewToBeVisible(R.id.albumRecyclerView))
         onView(isRoot()).perform(waitForViewToBeVisible(R.id.albumArtistTextView))
 
-        checkContentDescriptionInRecyclerView(0, R.id.albumArtImageView, "Believe album art image")
-        checkContentInRecyclerView(0, R.id.albumNameTextView, "Believe")
-        checkContentInRecyclerView(0, R.id.albumArtistTextView, "Disturbed")
+        onRecyclerView(R.id.albumRecyclerView) {
+            hasViewWithContentDescription(
+                0,
+                R.id.albumArtImageView,
+                "Believe album art image"
+            )
+        }
+        onRecyclerView(R.id.albumRecyclerView) { hasView(0, R.id.albumNameTextView, "Believe") }
+        onRecyclerView(R.id.albumRecyclerView) { hasView(0, R.id.albumArtistTextView, "Disturbed") }
 
-        checkContentDescriptionInRecyclerView(1, R.id.albumArtImageView, "Make Believe album art image")
-        checkContentInRecyclerView(1, R.id.albumNameTextView, "Make Believe")
-        checkContentInRecyclerView(1, R.id.albumArtistTextView, "Weezer")
+        onRecyclerView(R.id.albumRecyclerView) {
+            hasViewWithContentDescription(
+                1,
+                R.id.albumArtImageView,
+                "Make Believe album art image"
+            )
+        }
+        onRecyclerView(R.id.albumRecyclerView) { hasView(1, R.id.albumNameTextView, "Make Believe") }
 
-        checkContentDescriptionInRecyclerView(2, R.id.albumArtImageView, "Believe (Deluxe Edition) album art image")
-        checkContentInRecyclerView(2, R.id.albumNameTextView, "Believe (Deluxe Edition)")
-        checkContentInRecyclerView(2, R.id.albumArtistTextView, "Justin Bieber")
+        onRecyclerView(R.id.albumRecyclerView) { hasView(1, R.id.albumArtistTextView, "Weezer") }
 
-        checkContentDescriptionInRecyclerView(3, R.id.albumArtImageView, "Believe album art image")
-        checkContentInRecyclerView(3, R.id.albumNameTextView, "Believe")
-        checkContentInRecyclerView(3, R.id.albumArtistTextView, "Justin Bieber")
+        onRecyclerView(R.id.albumRecyclerView) {
+            hasViewWithContentDescription(
+                2,
+                R.id.albumArtImageView,
+                "Believe (Deluxe Edition) album art image"
+            )
+        }
+        onRecyclerView(R.id.albumRecyclerView) {
+            hasView(
+                2,
+                R.id.albumNameTextView,
+                "Believe (Deluxe Edition)"
+            )
+        }
+        onRecyclerView(R.id.albumRecyclerView) {
+            hasView(
+                2,
+                R.id.albumArtistTextView,
+                "Justin Bieber"
+            )
+        }
 
-        checkContentDescriptionInRecyclerView(4, R.id.albumArtImageView, "Believe album art image")
-        checkContentInRecyclerView(4, R.id.albumNameTextView, "Believe")
-        checkContentInRecyclerView(4, R.id.albumArtistTextView, "Cher")
+        onRecyclerView(R.id.albumRecyclerView) {
+            hasViewWithContentDescription(
+                3,
+                R.id.albumArtImageView,
+                "Believe album art image"
+            )
+        }
+        onRecyclerView(R.id.albumRecyclerView) { hasView(3, R.id.albumNameTextView, "Believe") }
+        onRecyclerView(R.id.albumRecyclerView) {
+            hasView(
+                3,
+                R.id.albumArtistTextView,
+                "Justin Bieber"
+            )
+        }
+
+        onRecyclerView(R.id.albumRecyclerView) {
+            hasViewWithContentDescription(
+                4,
+                R.id.albumArtImageView,
+                "Believe album art image"
+            )
+        }
+        onRecyclerView(R.id.albumRecyclerView) { hasView(4, R.id.albumNameTextView, "Believe") }
+        onRecyclerView(R.id.albumRecyclerView) { hasView(4, R.id.albumArtistTextView, "Cher") }
 
     }
 
-    private fun checkContentInRecyclerView(
-        position: Int,
-        viewId: Int,
-        expectedValue: CharSequence
-    ) {
-        onView(withId(R.id.albumRecyclerView)).check(
-            hasViewWithIdAndTextAtPosition(
-                position,
-                viewId,
-                expectedValue
-            )
-        )
-    }
+    @Test
+    fun invalidSearchValueExceptionIsHandled() {
+        launchFragmentInHiltContainer<SearchAlbumFragment> {}
+        onView(withId(R.id.actionSearch)).perform(click())
+        onView(withId(androidx.appcompat.R.id.search_src_text)).perform(typeText(" "))
 
-    private fun checkContentDescriptionInRecyclerView(
-        position: Int,
-        viewId: Int,
-        expectedValue: CharSequence
-    ) {
-        onView(withId(R.id.albumRecyclerView)).check(
-            hasViewWithIdAndContentDescriptionAtPosition(
-                position,
-                viewId,
-                expectedValue
-            )
-        )
+        Espresso.closeSoftKeyboard()
+        onView(isRoot()).perform(waitForViewToBeVisible(com.google.android.material.R.id.snackbar_text))
+        onView(withId(com.google.android.material.R.id.snackbar_text))
+            .check(matches(withText("Please provide search value")))
     }
 }

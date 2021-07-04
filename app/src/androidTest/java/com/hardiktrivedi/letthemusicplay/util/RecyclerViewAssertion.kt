@@ -7,7 +7,7 @@ import androidx.test.espresso.EspressoException
 import androidx.test.espresso.ViewAssertion
 import org.junit.Assert.assertEquals
 
-fun hasViewWithIdAndTextAtPosition(
+fun hasView(
     position: Int = 0,
     viewId: Int,
     expectedValue: CharSequence
@@ -24,7 +24,7 @@ fun hasViewWithIdAndTextAtPosition(
 }
 
 
-fun hasViewWithIdAndContentDescriptionAtPosition(
+fun hasViewWithContentDescription(
     position: Int = 0,
     viewId: Int,
     expectedValue: CharSequence

@@ -1,10 +1,8 @@
 package com.hardiktrivedi.letthemusicplay.detail
 
 import android.os.Bundle
-import androidx.test.espresso.Espresso
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.IdlingRegistry
-import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.withId
@@ -13,8 +11,9 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.hardiktrivedi.letthemusicplay.R
 import com.hardiktrivedi.letthemusicplay.hilt.NetworkModule
 import com.hardiktrivedi.letthemusicplay.mockresponsedispatcher.MockServerDispatcher
-import com.hardiktrivedi.letthemusicplay.util.hasViewWithIdAndTextAtPosition
+import com.hardiktrivedi.letthemusicplay.util.hasView
 import com.hardiktrivedi.letthemusicplay.util.launchFragmentInHiltContainer
+import com.hardiktrivedi.letthemusicplay.util.onRecyclerView
 import com.hardiktrivedi.letthemusicplay.util.waitForViewToBeVisible
 import com.jakewharton.espresso.OkHttp3IdlingResource
 import dagger.hilt.android.testing.HiltAndroidRule
@@ -76,32 +75,16 @@ class AlbumDetailFragmentTest {
         onView(withId(R.id.listenerCountTextView)).check(matches(withText("743.2 K")))
         onView(withId(R.id.playCountTextView)).check(matches(withText("65.5 M")))
 
-        checkContentInRecyclerView(0, R.id.titleTextView, "Nikes")
-        checkContentInRecyclerView(0, R.id.artistTextView, "Frank Ocean")
-        checkContentInRecyclerView(0, R.id.durationTextView, "05:14")
+        onRecyclerView(R.id.trackRecyclerView) { hasView(0, R.id.titleTextView, "Nikes") }
+        onRecyclerView(R.id.trackRecyclerView) { hasView(0, R.id.artistTextView, "Frank Ocean") }
+        onRecyclerView(R.id.trackRecyclerView) { hasView(0, R.id.durationTextView, "05:14") }
 
-        checkContentInRecyclerView(1, R.id.titleTextView, "Ivy")
-        checkContentInRecyclerView(1, R.id.artistTextView, "Frank Ocean")
-        checkContentInRecyclerView(1, R.id.durationTextView, "04:09")
+        onRecyclerView(R.id.trackRecyclerView) { hasView(1, R.id.titleTextView, "Ivy") }
+        onRecyclerView(R.id.trackRecyclerView) { hasView(1, R.id.artistTextView, "Frank Ocean") }
+        onRecyclerView(R.id.trackRecyclerView) { hasView(1, R.id.durationTextView, "04:09") }
 
-        checkContentInRecyclerView(2, R.id.titleTextView, "Pink + White")
-        checkContentInRecyclerView(2, R.id.artistTextView, "Frank Ocean")
-        checkContentInRecyclerView(2, R.id.durationTextView, "03:04")
-
-    }
-
-    // TODO DRY
-    private fun checkContentInRecyclerView(
-        position: Int,
-        viewId: Int,
-        expectedValue: CharSequence
-    ) {
-        onView(withId(R.id.trackRecyclerView)).check(
-            hasViewWithIdAndTextAtPosition(
-                position,
-                viewId,
-                expectedValue
-            )
-        )
+        onRecyclerView(R.id.trackRecyclerView) { hasView(2, R.id.titleTextView, "Pink + White") }
+        onRecyclerView(R.id.trackRecyclerView) { hasView(2, R.id.artistTextView, "Frank Ocean") }
+        onRecyclerView(R.id.trackRecyclerView) { hasView(2, R.id.durationTextView, "03:04") }
     }
 }

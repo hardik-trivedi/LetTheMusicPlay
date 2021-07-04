@@ -11,13 +11,17 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hardiktrivedi.letthemusicplay.R
+import com.hardiktrivedi.letthemusicplay.data.model.AlbumObject
 import com.hardiktrivedi.letthemusicplay.databinding.AlbumDetailFragmentBinding
 import com.hardiktrivedi.letthemusicplay.util.largeAlbumArtUrl
+import com.hardiktrivedi.letthemusicplay.util.showSnackBar
 import com.hardiktrivedi.letthemusicplay.util.toCountable
 import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import java.net.UnknownHostException
 
 
 @AndroidEntryPoint
@@ -44,31 +48,52 @@ class AlbumDetailFragment : Fragment(R.layout.album_detail_fragment) {
         binding = AlbumDetailFragmentBinding.bind(view)
         viewModel = ViewModelProvider(requireActivity()).get(AlbumDetailViewModel::class.java)
         lifecycleScope.launch {
-            viewModel.getAlbumDetail(args.album, args.artist).collect {
-                with(binding) {
-                    Picasso.get()
-                        .load(it.image.largeAlbumArtUrl)
-                        .placeholder(R.drawable.ic_album_placeholder)
-                        .into(albumArtImageView)
-                    albumNameTextView.text = it.name
-                    albumArtistTextView.text = it.artist
-                    albumPublishedDate.text = it.wiki.published
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                        albumSummaryTextView.text =
-                            Html.fromHtml(it.wiki.summary, Html.FROM_HTML_MODE_COMPACT)
-                    } else {
-                        albumSummaryTextView.text = Html.fromHtml(it.wiki.summary)
+            viewModel.getAlbumDetail(args.album, args.artist)
+                .catch { e ->
+                    when (e) {
+                        is UnknownHostException -> binding.root.showSnackBar(
+                            getString(
+                                R.string.no_internet_message
+                            )
+                        )
+                        else -> {
+                            binding.root.showSnackBar(
+                                getString(
+                                    R.string.something_went_wrong
+                                )
+                            )
+                        }
                     }
-                    albumSummaryTextView.movementMethod = ScrollingMovementMethod()
-                    listenerCountTextView.text = it.listeners.toLong().toCountable()
-                    playCountTextView.text = it.playCount.toLong().toCountable()
-                    with(trackRecyclerView) {
-                        layoutManager = LinearLayoutManager(activity)
-                        adapter = trackListAdapter
-                    }
-                    trackListAdapter.submitList(it.tracks?.track)
                 }
+                .collect {
+                    showAlbumDetail(it)
+                }
+        }
+    }
+
+    private fun showAlbumDetail(it: AlbumObject) {
+        with(binding) {
+            Picasso.get()
+                .load(it.image.largeAlbumArtUrl)
+                .placeholder(R.drawable.ic_album_placeholder)
+                .into(albumArtImageView)
+            albumNameTextView.text = it.name
+            albumArtistTextView.text = it.artist
+            albumPublishedDate.text = it.wiki.published
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                albumSummaryTextView.text =
+                    Html.fromHtml(it.wiki.summary, Html.FROM_HTML_MODE_COMPACT)
+            } else {
+                albumSummaryTextView.text = Html.fromHtml(it.wiki.summary)
             }
+            albumSummaryTextView.movementMethod = ScrollingMovementMethod()
+            listenerCountTextView.text = it.listeners.toLong().toCountable()
+            playCountTextView.text = it.playCount.toLong().toCountable()
+            with(trackRecyclerView) {
+                layoutManager = LinearLayoutManager(activity)
+                adapter = trackListAdapter
+            }
+            trackListAdapter.submitList(it.tracks?.track)
         }
     }
 }
